@@ -9,6 +9,7 @@ plugins {
 }
 
 group = 'me.dio'
+
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
