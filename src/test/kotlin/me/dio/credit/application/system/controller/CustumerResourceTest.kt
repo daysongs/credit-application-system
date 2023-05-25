@@ -1,4 +1,4 @@
-package me.dio.credit.application.system
+package me.dio.credit.application.system.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import me.dio.credit.application.system.dto.CustomerDto

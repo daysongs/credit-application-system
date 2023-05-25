@@ -1,18 +1,26 @@
 package me.dio.credit.application.system.dto
 
+import jakarta.validation.constraints.Email
+import jakarta.validation.constraints.NotEmpty
+import jakarta.validation.constraints.NotNull
 import me.dio.credit.application.system.entity.Address
 import me.dio.credit.application.system.entity.Customer
+import org.hibernate.validator.constraints.br.CPF
 import java.math.BigDecimal
 
 data class CustomerDto(
-    val firstName: String,
-    val lastName: String,
-    val cpf: String,
-    val income: BigDecimal,
-    val email: String,
-    val password: String,
-    val zipCode: String,
-    val street: String
+    // a marcação @NotEmpty() serve para diversos tratamentos relacionado a string como verificar se é vazia ou nula
+    //como estamos trabalhando com kptlin ao inveis de java é preciso coloca @field: anstes da anotação
+    @field:NotEmpty(message = "invalid input") val firstName: String,
+    @field:NotEmpty(message = "invalid input") val lastName: String,
+    @field:NotEmpty(message = "invalid input")
+    @field:CPF(message = "the invalid CPF") val cpf: String,
+    @field:NotNull(message = "invalid input") val income: BigDecimal,
+    @field:Email(message = "invalid email")
+    @field:NotEmpty(message = "invalid input") val email: String,
+    @field:NotEmpty(message = "invalid input") val password: String,
+    @field:NotEmpty(message = "invalid input") val zipCode: String,
+    @field:NotEmpty(message = "invalid input") val street: String
 
 
 
